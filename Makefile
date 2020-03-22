@@ -7,7 +7,7 @@ API_INCLUDES = -Iinclude/api
 API_SOURCES = $(wildcard src/api/*.c)
 
 CC = gcc
-CFLAGS = -g -DLOG_USE_COLOR=1 -Wall
+CFLAGS = -std=gnu99 -g -DLOG_USE_COLOR=1 -Wall
 
 main:
 	$(CC) $(CFLAGS) -pthread -lzmq $(API_INCLUDES) ${API_SOURCES} src/leptonic.c -o bin/leptonic
